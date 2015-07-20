@@ -329,8 +329,8 @@ describe('Comprehensive test cases', function() {
             output: '\\sideset {_{\\dagger }^{*}}{_{\\dagger }^{*}}\\prod '
         },
         'FUN_AR3' : {
-            input: '\\qPochhammer {A}{B}{C}',
-            ouput: '{\\qPochhammer {A}{B}{C}}',
+            input: '\\qPochhammer{A}{B}{C}',
+            output: '{\\qPochhammer {A}{B}{C}}',
         },
         'FUN_INFIX (1)': {
             input: '\\left({a\\atop 1}{b\\atop m}{c\\atop n}\\right)',
