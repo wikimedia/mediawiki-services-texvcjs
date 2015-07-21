@@ -74,7 +74,7 @@ describe('Comprehensive test cases', function() {
                 '\\bigwedge \\blacklozenge \\blacksquare \\blacktriangle ' +
                 '\\blacktriangledown \\blacktriangleleft \\blacktriangleright '+
                 '\\bot \\bowtie \\Box \\boxdot \\boxminus \\boxplus ' +
-                '\\boxtimes \\bullet \\bumpeq \\Bumpeq \\cap \\Cap \\cdot ' +
+                '\\boxtimes \\bullet \\bumpeq \\Bumpeq \\cap \\Cap \\CatalansConstant \\cdot ' +
                 '\\cdots \\centerdot \\checkmark \\chi \\circ \\circeq ' +
                 '\\circlearrowleft \\circlearrowright \\circledast ' +
                 '\\circledcirc \\circleddash \\circledS \\clubsuit \\colon ' +
@@ -315,18 +315,22 @@ describe('Comprehensive test cases', function() {
         'FUN_AR2': {
             input:
                 '\\binom{A}{B}\\cancelto{A}{B}\\cfrac{A}{B}\\dbinom{A}{B}' +
-                '\\dfrac{A}{B}\\frac{A}{B}\\overset{A}{B}\\stackrel{A}{B}' +
+                '\\dfrac{A}{B}\\frac{A}{B}\\overset{A}{B}\\pochhammer{A}{B}\\stackrel{A}{B}' +
                 '\\tbinom{A}{B}\\tfrac{A}{B}\\underset{A}{B}',
             output:
                 '{\\binom {A}{B}}{\\cancelto {A}{B}}{\\cfrac {A}{B}}' +
                 '{\\dbinom {A}{B}}{\\dfrac {A}{B}}{\\frac {A}{B}}' +
-                '{\\overset {A}{B}}{\\stackrel {A}{B}}{\\tbinom {A}{B}}' +
+                '{\\overset {A}{B}}{\\pochhammer {A}{B}}{\\stackrel {A}{B}}{\\tbinom {A}{B}}' +
                 '{\\tfrac {A}{B}}{\\underset {A}{B}}',
             skipOcaml: 'double spacing'
         },
         'FUN_AR2nb': {
             input: '\\sideset{_\\dagger^*}{_\\dagger^*}\\prod',
             output: '\\sideset {_{\\dagger }^{*}}{_{\\dagger }^{*}}\\prod '
+        },
+        'FUN_AR3' : {
+            input: '\\qPochhammer{A}{B}{C}',
+            output: '{\\qPochhammer {A}{B}{C}}',
         },
         'FUN_INFIX (1)': {
             input: '\\left({a\\atop 1}{b\\atop m}{c\\atop n}\\right)',
