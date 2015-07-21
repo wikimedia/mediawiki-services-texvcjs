@@ -91,9 +91,9 @@ Licensed under GPLv2.
 [NPM1]: https://nodei.co/npm/texvcjs.svg
 [NPM2]: https://nodei.co/npm/texvcjs/
 
-[1]: https://travis-ci.org/cscott/texvcjs.svg
-[2]: https://travis-ci.org/cscott/texvcjs
-[3]: https://david-dm.org/cscott/texvcjs.svg
-[4]: https://david-dm.org/cscott/texvcjs
-[5]: https://david-dm.org/cscott/texvcjs/dev-status.svg
-[6]: https://david-dm.org/cscott/texvcjs#info=devDependencies
+[1]: https://travis-ci.org/DRMF/texvcjs.svg
+[2]: https://travis-ci.org/DRMF/texvcjs
+[3]: https://david-dm.org/DRMF/texvcjs.svg
+[4]: https://david-dm.org/DRMF/texvcjs
+[5]: https://david-dm.org/DRMF/texvcjs/dev-status.svg
+[6]: https://david-dm.org/DRMF/texvcjs#info=devDependencies
