@@ -21,7 +21,7 @@
         "url": "https://github.com/cscott/texvcjs/issues"
     },
     "dependencies": {
-        "commander": "~2.5.0"
+        "commander": "~2.8.1"
     },
     "devDependencies": {
         "jshint": "~2.5.2",
