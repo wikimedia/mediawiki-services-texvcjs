@@ -45,10 +45,10 @@ PACKAGES.forEach(function(pkg) {
 
 // output result
 if (result.status === '+') {
-    console.log(result.status + (result.output || ''));
+    util.print(result.status + (result.output || ''));
 } else if (result.status === 'F' || program.verbose) {
-    console.log(result.status + (result.details || ''));
+    util.print(result.status + (result.details || ''));
 } else {
-    console.log(result.status);
+    util.print(result.status);
 }
 process.exit(result.status === '+' ? 0 : 1);
