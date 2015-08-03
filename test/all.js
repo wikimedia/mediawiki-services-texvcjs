@@ -253,6 +253,12 @@ describe('Comprehensive test cases', function() {
                 '\\left\\langle \\right\\rangle ' +
                 '\\right\\uparrow \\right\\Uparrow \\right\\Uparrow '
         },
+        'PAREN': {
+            input:
+                '\\sinh(A)',
+            output:
+                '{\\sinh@{A}}'
+        },
         'FUN_AR1': {
             input:
                 '\\acute{A}\\bar{A}\\bcancel{A}\\bmod{A}\\boldsymbol{A}' +
@@ -330,7 +336,7 @@ describe('Comprehensive test cases', function() {
         },
         'FUN_AR3' : {
             input: '\\qPochhammer{A}{B}{C}',
-            output: '{\\qPochhammer {A}{B}{C}}',
+            output: '{\\qPochhammer {A}{B}{C}}'
         },
         'FUN_INFIX (1)': {
             input: '\\left({a\\atop 1}{b\\atop m}{c\\atop n}\\right)',
