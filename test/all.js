@@ -397,9 +397,15 @@ describe('Comprehensive test cases', function() {
         },
         'Color (4)': {
             input:
-                '\\definecolor{mycolor}{RGB}{0.1,.2,0.}\\color[CMYK]{0,1,0,1}',
+                '\\definecolor{mycolor}{rgb}{0.1,.2,0.}\\color[CMYK]{0,1,0,1}',
             output:
                 '\\definecolor {mycolor}{rgb}{0.1,.2,0.}\\color [cmyk]{0,1,0,1}'
+        },
+        'Color (5)': {
+            input:
+                '\\definecolor{mycolor}{RGB}{255,132,5}',
+            output:
+                '\\definecolor {mycolor}{RGB}{255,132,5}'
         },
         'Unicode': {
             input: '{\\mbox{💩\uD83D\uDCA9}}'
