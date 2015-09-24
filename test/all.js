@@ -53,7 +53,7 @@ describe('Comprehensive test cases', function() {
                 '\\arccos \\arcsin \\arctan \\arg \\cosh \\cos \\cot \\coth ' +
                 '\\csc \\deg \\det \\dim \\exp \\gcd \\hom \\inf \\ker \\lg ' +
                 '\\lim \\liminf \\limsup \\ln \\log \\max \\min \\Pr \\sec ' +
-                '\\sin \\sinh \\sup \\tan \\tanh '
+                '\\sin \\sup \\tan \\tanh \\sinh '
         },
         'Mediawiki functions': {
             input:
@@ -253,11 +253,17 @@ describe('Comprehensive test cases', function() {
                 '\\left\\langle \\right\\rangle ' +
                 '\\right\\uparrow \\right\\Uparrow \\right\\Uparrow '
         },
-        'PAREN': {
+        'PAREN1': {
             input:
                 '\\sinh(A)',
             output:
-                '{\\sinh@{A}}'
+                '\\sinh@{A}'
+        },
+        'PAREN2': {
+            input:
+                '\\sinh{A}',
+            output:
+                '\\sinh@@{A}'
         },
         'FUN_AR1': {
             input:

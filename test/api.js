@@ -47,7 +47,8 @@ describe('API', function() {
           status: 'F', details: '\\figureEightIntegral' },
         // My own test cases:
         { in: '\\diamondsuit ' },
-        { in: '\\sinh x' },
+        { in: '\\sinh x',
+          output: '\\sinh@@{x}'},
         { in: '\\begin{foo}\\end{foo}',
           status: 'F', details: '\\begin{foo}' },
         { in: '\\hasOwnProperty',
