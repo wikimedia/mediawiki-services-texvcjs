@@ -39,10 +39,10 @@ describe('Comprehensive test cases', function() {
                 '\\hbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
                 '\\vbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ',
             output:
-                '{\\text{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\mbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\hbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\vbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}',
+                '\\text{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}'+
+                '\\mbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}'+
+                '\\hbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}'+
+                '\\vbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}',
         },
         'Box functions (2)': {
             input: '{\\text{ABC}}{\\mbox{ABC}}{\\hbox{ABC}}{\\vbox{ABC}}',
@@ -219,7 +219,7 @@ describe('Comprehensive test cases', function() {
                     if (d === "\\darr") { d = "\\downarrow"; }
                     if (d === "\\uarr") { d = "\\uparrow"; }
                     if (d.charAt(0)==='\\' && d.length > 2) { d = d; }
-                    return "{\\" + b + " " + d + "}";
+                    return "\\" + b + " " + d;
                 }).join('');
             }).join('');
             return { input: input, output: output };
@@ -279,25 +279,25 @@ describe('Comprehensive test cases', function() {
                 '\\tilde{A}\\underline{A}\\vec{A}\\widehat{A}\\widetilde{A}' +
                 '\\xcancel{A}\\xleftarrow{A}\\xrightarrow{A}',
             output:
-                '{\\acute{A}}{\\bar{A}}{\\bcancel{A}}{\\bmod{A}}' +
-                '{\\boldsymbol{A}}{\\breve{A}}{\\cancel{A}}{\\check{A}}' +
-                '{\\ddot{A}}{\\dot{A}}{\\emph{A}}{\\grave{A}}{\\hat{A}}' +
-                '\\mathbb{A}\\mathbf{A}{\\mathbin{A}}{\\mathcal{A}}' +
-                '{\\mathclose{A}}{\\mathfrak{A}}{\\mathit{A}}' +
-                '{\\mathop{A}}{\\mathopen{A}}{\\mathord{A}}' +
-                '{\\mathpunct{A}}{\\mathrel{A}}\\mathrm{A}{\\mathsf{A}}' +
-                '{\\mathtt{A}}\\operatorname{A}{\\overleftarrow{A}}' +
-                '{\\overleftrightarrow{A}}{\\overline{A}}' +
-                '{\\overrightarrow{A}}{\\pmod{A}}{\\sqrt{A}}' +
-                '{\\textbf{A}}{\\textit{A}}{\\textrm{A}}{\\textsf{A}}' +
-                '{\\texttt{A}}{\\tilde{A}}{\\underline{A}}{\\vec{A}}' +
-                '{\\widehat{A}}{\\widetilde{A}}{\\xcancel{A}}' +
-                '{\\xleftarrow{A}}{\\xrightarrow{A}}',
+                '\\acute{A}\\bar{A}\\bcancel{A}\\bmod{A}' +
+                '\\boldsymbol{A}\\breve{A}\\cancel{A}\\check{A}' +
+                '\\ddot{A}\\dot{A}\\emph{A}\\grave{A}\\hat{A}' +
+                '\\mathbb{A}\\mathbf{A}\\mathbin{A}\\mathcal{A}' +
+                '\\mathclose{A}\\mathfrak{A}\\mathit{A}' +
+                '\\mathop{A}\\mathopen{A}\\mathord{A}' +
+                '\\mathpunct{A}\\mathrel{A}\\mathrm{A}\\mathsf{A}' +
+                '\\mathtt{A}\\operatorname{A}\\overleftarrow{A}' +
+                '\\overleftrightarrow{A}\\overline{A}' +
+                '\\overrightarrow{A}\\pmod{A}\\sqrt{A}' +
+                '\\textbf{A}\\textit{A}\\textrm{A}\\textsf{A}' +
+                '\\texttt{A}\\tilde{A}\\underline{A}\\vec{A}' +
+                '\\widehat{A}\\widetilde{A}\\xcancel{A}' +
+                '\\xleftarrow{A}\\xrightarrow{A}',
             skipOcaml: 'double spacing and extra braces'
         },
         'FUN_AR1 (2)': {
             input: '\\Bbb{foo}\\bold{bar}',
-            output: '{\\mathbb{foo}}{\\mathbf{bar}}',
+            output: '\\mathbb{foo}\\mathbf{bar}',
             skipOcaml: 'double spacing',
             skipReparse: 'spacing'
         },
@@ -319,9 +319,9 @@ describe('Comprehensive test cases', function() {
                 '\\xleftarrow{above}\\xleftarrow[below]{above}' +
                 '\\xrightarrow{above}\\xrightarrow[below]{above}',
             output:
-                '{\\sqrt{2}}{\\sqrt[{3}]{2}}' +
-                '{\\xleftarrow{above}}{\\xleftarrow[{below}]{above}}' +
-                '{\\xrightarrow{above}}{\\xrightarrow[{below}]{above}}',
+                '\\sqrt{2}\\sqrt[{3}]{2}' +
+                '\\xleftarrow{above}\\xleftarrow[{below}]{above}' +
+                '\\xrightarrow{above}\\xrightarrow[{below}]{above}',
             skipOcaml: 'spacing'
         },
         'FUN_AR2': {
@@ -330,10 +330,10 @@ describe('Comprehensive test cases', function() {
                 '\\dfrac{A}{B}\\frac{A}{B}\\overset{A}{B}\\pochhammer{A}{B}\\stackrel{A}{B}' +
                 '\\tbinom{A}{B}\\tfrac{A}{B}\\underset{A}{B}',
             output:
-                '{\\binom{A}{B}}{\\cancelto{A}{B}}{\\cfrac{A}{B}}' +
-                '{\\dbinom{A}{B}}{\\dfrac{A}{B}}{\\frac{A}{B}}' +
-                '{\\overset{A}{B}}{\\pochhammer{A}{B}}{\\stackrel{A}{B}}{\\tbinom{A}{B}}' +
-                '{\\tfrac{A}{B}}{\\underset{A}{B}}',
+                '\\binom{A}{B}\\cancelto{A}{B}\\cfrac{A}{B}' +
+                '\\dbinom{A}{B}\\dfrac{A}{B}\\frac{A}{B}' +
+                '\\overset{A}{B}\\pochhammer{A}{B}\\stackrel{A}{B}\\tbinom{A}{B}' +
+                '\\tfrac{A}{B}\\underset{A}{B}',
             skipOcaml: 'double spacing'
         },
         'FUN_AR2nb': {
@@ -342,7 +342,7 @@ describe('Comprehensive test cases', function() {
         },
         'FUN_AR3' : {
             input: '\\qPochhammer{A}{B}{C}',
-            output: '{\\qPochhammer{A}{B}{C}}'
+            output: '\\qPochhammer{A}{B}{C}'
         },
         'FUN_INFIX (1)': {
             input: '\\left({a\\atop 1}{b\\atop m}{c\\atop n}\\right)',
@@ -362,7 +362,7 @@ describe('Comprehensive test cases', function() {
         },
         'DECLh': {
             input: '{abc \\rm def \\it ghi \\cal jkl \\bf mno}',
-            output: '{abc{\\rm{def{\\it{ghi{\\cal{jkl{\\bf{mno}}}}}}}}}'
+            output: '{abc\\rm{def\\it{ghi\\cal{jkl\\bf{mno}}}}}'
         },
         'litsq_zq': {
             input: ']^2',
