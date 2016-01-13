@@ -7,7 +7,7 @@ A TeX/LaTeX validator.
 
 `texvcjs` takes user input and validates it while replacing
 MediaWiki-specific functions.  It is a JavaScript port of [texvc],
-which was originally written in ocaml for the [Math extension].
+which was originally written in [OCaml] for the [Math extension].
 
 The `texvcjs` library was originally written to be used by the
 [mw-ocg-latexer] PDF-generation backend of the mediawiki
@@ -65,7 +65,7 @@ is a string.
 
 The fields `ams_required`, `cancel_required`, `color_required`,
 `euro_required`, and `teubner_required` are set to `true` iff the input
-string requires the use of the corresponding LaTeX packages.
+string requires the use of the corresponding [LaTeX packages].
 The `ams_required` field requires the use of the `amsmath` and `amssymb`
 packages.
 
@@ -87,13 +87,24 @@ Licensed under GPLv2.
 [texvc]: https://git.wikimedia.org/blob/mediawiki%2Fextensions%2FMath/REL1_23/texvccheck%2FREADME
 [Math extension]: https://www.mediawiki.org/wiki/Extension:Math
 [Collection extension]: https://www.mediawiki.org/wiki/Extension:Collection
+[OCaml]: https://ocaml.org/
+[LaTeX packages]: http://www.ctan.org/
 
 [NPM1]: https://nodei.co/npm/texvcjs.svg
 [NPM2]: https://nodei.co/npm/texvcjs/
 
+<<<<<<< HEAD
 [1]: https://travis-ci.org/DRMF/texvcjs.svg
 [2]: https://travis-ci.org/DRMF/texvcjs
 [3]: https://david-dm.org/DRMF/texvcjs.svg
 [4]: https://david-dm.org/DRMF/texvcjs
 [5]: https://david-dm.org/DRMF/texvcjs/dev-status.svg
 [6]: https://david-dm.org/DRMF/texvcjs#info=devDependencies
+=======
+[1]: https://travis-ci.org/wikimedia/texvcjs.svg
+[2]: https://travis-ci.org/wikimedia/texvcjs
+[3]: https://david-dm.org/wikimedia/texvcjs.svg
+[4]: https://david-dm.org/wikimedia/texvcjs
+[5]: https://david-dm.org/wikimedia/texvcjs/dev-status.svg
+[6]: https://david-dm.org/wikimedia/texvcjs#info=devDependencies
+>>>>>>> 1322e14ab87fbfcc9cfa9b56cb59a8a5ce399ad7
