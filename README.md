@@ -1,7 +1,8 @@
 # texvcjs
-[![NPM][NPM1]][NPM2]
-
-[![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6]
+[![NPM Version][NPM1]][NPM2]
+[![Build Status][1]][2]
+[![dependency status][3]][4]
+[![dev dependency status][5]][6]
 
 A TeX/LaTeX validator.
 
@@ -90,9 +91,8 @@ Licensed under GPLv2.
 [OCaml]: https://ocaml.org/
 [LaTeX packages]: http://www.ctan.org/
 
-[NPM1]: https://nodei.co/npm/texvcjs.svg
-[NPM2]: https://nodei.co/npm/texvcjs/
-
+[NPM1]: https://img.shields.io/npm/v/mathoid-texvcjs.svg
+[NPM2]: https://www.npmjs.com/package/mathoid-texvcjs
 [1]: https://travis-ci.org/wikimedia/texvcjs.svg
 [2]: https://travis-ci.org/wikimedia/texvcjs
 [3]: https://david-dm.org/wikimedia/texvcjs.svg
