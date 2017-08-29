@@ -7,7 +7,7 @@ var path = require('path');
 
 // set this variable to the path to your texvccheck binary for additional
 // sanity-checking against the ocaml texvccheck.
-var TEXVCBINARY = 0; // "../mediawiki/extensions/Math/texvccheck/texvccheck";
+var TEXVCBINARY = 0; //"../../texvc/texvc"; // "../mediawiki/extensions/Math/texvccheck/texvccheck";
 
 var getocaml = function(input, fixDoubleSpacing, done) {
     if (!TEXVCBINARY) { done( '-no texvcbinary') ; }
