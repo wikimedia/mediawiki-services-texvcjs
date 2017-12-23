@@ -235,6 +235,18 @@ describe('Comprehensive test cases', function() {
                 '\\S \\spadesuit \\subset \\subseteq \\supseteq ' +
                 '\\mathrm {T} \\vartheta \\mbox{\\coppa} \\wp \\mathrm {Z} '
         },
+        'Unicode aliases': {
+          input:
+            '∫\\frac{∂f}{∂τ}dτ',
+          output:
+            '\\int {\\frac {\\partial f}{\\partial \\tau }}d\\tau '
+        },
+        'Unicode aliases (2)': {
+          input:
+            'π ℤ ≠ ♯ ≁',
+          output:
+            '\\pi \\mathbb{Z} \\neq \\sharp \\not\\sim '
+        },
         'Big': (function() {
             var BIGS = ('\\big\\Big\\bigg\\Bigg\\biggl\\Biggl\\biggr\\Biggr' +
              '\\bigl\\Bigl\\bigr\\Bigr').split(/\\/).slice(1);

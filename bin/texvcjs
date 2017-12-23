@@ -14,6 +14,7 @@ program
     .option('-v, --verbose', 'Show verbose error information')
     .option('--usemathrm', 'Use \\mathrm instead of \\mbox to escape some text literals')
     .option('--usemhchem', 'Allow commands from the mhchem package')
+    .option('--no-unicode', 'Disable unicode aliasing')
     .option('-D, --debug', 'Show stack trace on failure');
 
 PACKAGES.forEach(function(pkg) {
@@ -35,7 +36,12 @@ if (program.rebuild) {
 }
 
 var texvcjs = require('../');
-var result = texvcjs.check(input, { debug: program.debug, usemathrm:program.usemathrm, usemhchem: program.usemhchem });
+var result = texvcjs.check(input, {
+    debug: program.debug,
+    usemathrm: program.usemathrm,
+    usemhchem: program.usemhchem,
+    no_unicode_aliase: ! program.unicode,
+});
 
 // check required packages
 PACKAGES.forEach(function(pkg) {

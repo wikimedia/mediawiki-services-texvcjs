@@ -9,7 +9,7 @@
         "Promise",
         "Set"
     ],
-
+    "esversion": 6,
     "bitwise": true,
     "curly": true,
     "eqeqeq": true,
@@ -31,6 +31,6 @@
     "node": true,
 
     "nomen": false,
-    "loopfunc": true
-    //"onevar": true
+    "loopfunc": true,
+    "onevar": true
 }
