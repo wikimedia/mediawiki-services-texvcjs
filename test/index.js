@@ -58,7 +58,7 @@ var testcases = [
         input: '\\left(',
         out: {
             "column": undefined,
-            "details": "SyntaxError: Expected \"-\", \"[\", \"\\\\\", \"\\\\begin\", \"\\\\begin{\", \"]\", \"^\", \"_\", \"{\", [ \\t\\n\\r], [%$], [().], [,:;?!'], [/|], [0-9], [><~], [\\-+*=], or [a-zA-Z] but end of input found.",
+            "details": "SyntaxError: Expected \"\\\\\", \"\\\\begin\", \"\\\\begin{\", \"]\", \"^\", \"_\", \"{\", [ \\t\\n\\r], [!'*-\\-0-;=?A-Za-z], [%$], [(-).-/[|], or [><~] but end of input found.",
             "line": undefined,
             "offset": undefined,
             "status": "S"

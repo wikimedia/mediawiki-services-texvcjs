@@ -2,13 +2,14 @@
 'use strict';
 const PACKAGES = ['ams', 'cancel', 'color', 'euro', 'teubner', 'stix'];
 
-const program = require('commander');
+const { program } = require('commander');
 
 const json = require('../package.json');
 
 program
     .version(json.version)
     .usage('[options] <tex input>')
+    .argument('<tex input>', 'TeX input to check')
     .option('--rebuild', 'Rebuild PEGjs grammar before parsing')
     .option('-v, --verbose', 'Show verbose error information')
     .option('--usemathrm', 'Use \\mathrm instead of \\mbox to escape some text literals')
@@ -26,7 +27,7 @@ program
         '"all": is a combination of list, tree and identifier \n' +
         '"feedback": returns data to generate user feedback in a ui', 'list');
 
-PACKAGES.forEach(function (pkg) {
+PACKAGES.forEach((pkg) => {
     let msg = 'Fail validation if input requires the ';
     if (pkg === 'ams') {
         msg += 'ams* packages';
@@ -53,7 +54,6 @@ if (options.info) {
         result = texvcjs.texvcinfo(input, {
             debug: options.debug,
             format: options.output,
-            // eslint-disable-next-line es-x/no-array-prototype-flat
             flatTree: options.flat,
             compact: options.compact });
     }
@@ -70,7 +70,7 @@ if (options.info) {
     } else {
         console.log(result.status + (result.details || ''));
     }
-    // eslint-disable-next-line no-process-exit
+    // eslint-disable-next-line n/no-process-exit
     process.exit(result.status === undefined ? 0 : 1);
 }
 
@@ -80,7 +80,7 @@ result = texvcjs.check(input, {
     usemhchem: options.usemhchem });
 
 // check required packages
-PACKAGES.forEach(function (pkg) {
+PACKAGES.forEach((pkg) => {
     if (result[pkg + '_required'] && !options[pkg]) {
         result.status = 'F';
         result.details = result[pkg + '_required'];
@@ -95,5 +95,5 @@ if (result.status === '+') {
 } else {
     console.log(result.status);
 }
-// eslint-disable-next-line no-process-exit
+// eslint-disable-next-line n/no-process-exit
 process.exit(result.status === '+' ? 0 : 1);

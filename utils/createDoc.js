@@ -70,22 +70,22 @@ const printSample = (set, elem) => {
     const count = argCounts[set] === undefined ? 0 : argCounts[set];
     const textString = elem.replace('\\', '\\textbackslash ');
     if (set === 'fun_infix') {
-        return `\\texttt{${textString}} applied on $ x, y$ is rendered as $x${elem} y$`;
+        return `\\texttt{${ textString }} applied on $ x, y$ is rendered as $x${ elem } y$`;
     }
     if (set === 'hline_function') {
-        return `\\texttt{${textString}} applied in a table is rendered as $\\begin{matrix}
+        return `\\texttt{${ textString }} applied in a table is rendered as $\\begin{matrix}
 x_{11} & x_{12} \\\\
 \\hline
 \\end{matrix}$`;
     }
     if (set === 'mediawiki_function_names') {
-        return `\\texttt{${textString}} is rendered as $\\operatorname{${elem.slice(1)}} y$`;
+        return `\\texttt{${ textString }} is rendered as $\\operatorname{${ elem.slice(1) }} y$`;
     }
     if (set === 'right_function') {
-        return `\\texttt{${textString}} is rendered as $\\left. \\right)$`;
+        return `\\texttt{${ textString }} is rendered as $\\left. \\right)$`;
     }
     if (elem === '\\limits' || elem === '\\nolimits') {
-        return `\\texttt{${textString}} is rendered for example as $\\mathop\\cap${elem}_a^b$`;
+        return `\\texttt{${ textString }} is rendered for example as $\\mathop\\cap${ elem }_a^b$`;
     }
     if (elem === '\\pagecolor') {
         return '\\texttt{\\textbackslash pagecolor} is not rendered.';
@@ -102,11 +102,11 @@ x_{11} & x_{12} \\\\
     } else {
         args = sampleArgs[set];
     }
-    const argDesc = count > 1 ? `applied on $${args}$ ` : '';
+    const argDesc = count > 1 ? `applied on $${ args }$ ` : '';
     const rendering = set.startsWith('mhchem') ?
-        `\\ce{${elem}${args}}` :
+        `\\ce{${ elem }${ args }}` :
         elem + args;
-    return `\\texttt{${textString}} ${argDesc}is rendered as $${rendering}$`;
+    return `\\texttt{${ textString }} ${ argDesc }is rendered as $${ rendering }$`;
 
 };
 
@@ -121,7 +121,7 @@ const printLiteral = function (x) {
 };
 const write = function (fn, content) {
     // eslint-disable-next-line security/detect-non-literal-fs-filename
-    fs.writeFile('./../doc/' + fn + '.tex', content, function (err) {
+    fs.writeFile('./../doc/' + fn + '.tex', content, (err) => {
         if (err) {
             console.log('error saving document', err);
         } else {
@@ -131,10 +131,8 @@ const write = function (fn, content) {
 };
 write('commands', letterMods.map(printMod).join('\n'));
 write('literals', literals.map(printLiteral).join('\n'));
-write('groups', sets.map((set) =>
-    '\\section{ Group \\texttt{' + set.replace(/_/g, '\\textunderscore ') + '}}\n\n' +
-        Object.entries(tu[set]).map((elem) =>
-            printSample(set, elem[0])
+write('groups', sets.map((set) => '\\section{ Group \\texttt{' + set.replace(/_/g, '\\textunderscore ') + '}}\n\n' +
+        Object.entries(tu[set]).map((elem) => printSample(set, elem[0])
         ).join('\n\n')
 ).join('\n\n')
 );

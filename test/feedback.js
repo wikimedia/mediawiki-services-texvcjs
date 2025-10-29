@@ -77,188 +77,157 @@ var testcases = [
     {
         input: '\\sin\\left(x)',
         out: {
+            "column": 13,
+            "details": "SyntaxError: Expected \"\\\\\", \"\\\\begin\", \"\\\\begin{\", \"]\", \"^\", \"_\", \"{\", [ \\t\\n\\r], [!'*-\\-0-;=?A-Za-z], [%$], [(-).-/[|], or [><~] but end of input found.",
+            "error": {
+                "expected": [
+                    {
+                        "ignoreCase": false,
+                        "inverted": false,
+                        "parts": [
+                            " ",
+                            "\t",
+                            "\n",
+                            "\r",
+                        ],
+                        "type": "class",
+                        "unicode": false,
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "_",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "^",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "inverted": false,
+                        "parts": [
+                            "!",
+                            "'",
+                            [
+                                "*",
+                                "-",
+                            ],
+                            [
+                                "0",
+                                ";",
+                            ],
+                            "=",
+                            "?",
+                            [
+                                "A",
+                                "Z",
+                            ],
+                            [
+                                "a",
+                                "z",
+                            ],
+                        ],
+                        "type": "class",
+                        "unicode": false,
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "\\",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "\\",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "inverted": false,
+                        "parts": [
+                            ">",
+                            "<",
+                            "~",
+                        ],
+                        "type": "class",
+                        "unicode": false,
+                    },
+                    {
+                        "ignoreCase": false,
+                        "inverted": false,
+                        "parts": [
+                            "%",
+                            "$",
+                        ],
+                        "type": "class",
+                        "unicode": false,
+                    },
+                    {
+                        "ignoreCase": false,
+                        "inverted": false,
+                        "parts": [
+                            [
+                                "(",
+                                ")",
+                            ],
+                            [
+                                ".",
+                                "/",
+                            ],
+                            "[",
+                            "|",
+                        ],
+                        "type": "class",
+                        "unicode": false,
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "\\",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "{",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "\\begin",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "\\begin{",
+                        "type": "literal",
+                    },
+                    {
+                        "ignoreCase": false,
+                        "text": "]",
+                        "type": "literal",
+                    },
+                ],
+                "found": null,
+                "location": {
+                    "end": {
+                        "column": 13,
+                        "line": 1,
+                        "offset": 12,
+                    },
+                    "start": {
+                        "column": 13,
+                        "line": 1,
+                        "offset": 12,
+                    },
+                },
+                "message": "Expected \"\\\\\", \"\\\\begin\", \"\\\\begin{\", \"]\", \"^\", \"_\", \"{\", [ \\t\\n\\r], [!'*-\\-0-;=?A-Za-z], [%$], [(-).-/[|], or [><~] but end of input found.",
+                "name": "SyntaxError",
+            },
             "line": 1,
             "offset": 12,
             "status": "S",
             "success": false,
             "warnings": [],
-            "column": 13,
-            "details": "SyntaxError: Expected \"-\", \"[\", \"\\\\\", \"\\\\begin\", \"\\\\begin{\", \"]\", \"^\", \"_\", \"{\", [ \\t\\n\\r], [%$], [().], [,:;?!'], [/|], [0-9], [><~], [\\-+*=], or [a-zA-Z] but end of input found.",
-            "error": {
-                "message": "Expected \"-\", \"[\", \"\\\\\", \"\\\\begin\", \"\\\\begin{\", \"]\", \"^\", \"_\", \"{\", [ \\t\\n\\r], [%$], [().], [,:;?!'], [/|], [0-9], [><~], [\\-+*=], or [a-zA-Z] but end of input found.",
-                "expected": [
-                    {
-                        "type": "class",
-                        "parts": [
-                            " ",
-                            "\t",
-                            "\n",
-                            "\r"
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "_",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "^",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            [
-                                "a",
-                                "z"
-                            ],
-                            [
-                                "A",
-                                "Z"
-                            ]
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            [
-                                "0",
-                                "9"
-                            ]
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            ",",
-                            ":",
-                            ";",
-                            "?",
-                            "!",
-                            "'"
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "-",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            "-",
-                            "+",
-                            "*",
-                            "="
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "\\",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "\\",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            ">",
-                            "<",
-                            "~"
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            "%",
-                            "$"
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            "(",
-                            ")",
-                            "."
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "class",
-                        "parts": [
-                            "/",
-                            "|"
-                        ],
-                        "inverted": false,
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "[",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "\\",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "{",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "\\begin",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "\\begin{",
-                        "ignoreCase": false
-                    },
-                    {
-                        "type": "literal",
-                        "text": "]",
-                        "ignoreCase": false
-                    }
-                ],
-                "found": null,
-                "location": {
-                    "start": {
-                        "offset": 12,
-                        "line": 1,
-                        "column": 13
-                    },
-                    "end": {
-                        "offset": 12,
-                        "line": 1,
-                        "column": 13
-                    }
-                },
-                "name": "SyntaxError"
-            }
         }
-
     },
     {
         input: '\\ce{H2O}',
@@ -317,6 +286,7 @@ var testcases = [
                                         ],
                                     ],
                                     "type": "class",
+                                    "unicode": false
                                 }
                             ],
                             "found": "}",
