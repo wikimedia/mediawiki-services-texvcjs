@@ -9,17 +9,17 @@ MediaWiki-specific functions.  It is a JavaScript port of [texvc],
 which was originally written in [OCaml] for the [Math extension].
 
 The `texvcjs` library was originally written to be used by the
-[mw-ocg-latexer] PDF-generation backend of the mediawiki
+[mw-ocg-latexer] PDF-generation backend of the MediaWiki
 [Collection extension].
 
 `texvcjs` also makes it possible to print the identified texvc tokens.
-Moreover, it provides additional information on the input such as
+Moreover, it provides additional information on the input, such as
 * listing the identifiers;
-* discovering if the expressions ends with a dot.
+* discovering if the expression ends with a dot.
 
 ## Installation
 
-Node version 10, 12 and 15 are tested to work.
+Node version 22 is tested to work.
 
 Install the node package dependencies with:
 ```
@@ -69,7 +69,7 @@ The `status` field is a single character:
 * `-`: Some other problem occurred.
 
 For status types `F`, `S`, and `-`, the position of the error may be found
-in the `line`, `column` and `offset` fields of the result.  More information
+in the `line`, `column`, and `offset` fields of the result.  More information
 about the problem can be found in the `details` field of the result, which
 is a string.
 
@@ -81,22 +81,22 @@ packages.
 
 ## mhchem
 
-To use the `\ce` tags from the mhchem package the parser needs to be called
-with the mhchem option. During the parsing if a `\ce` tag is encountered
-its contens is treated according to the [mhchem grammar]. The parsing in
+To use the `\ce` tags from the mhchem package, the parser needs to be called
+with the mhchem option. During the parsing, if a `\ce` tag is encountered,
+its contents are treated according to the [mhchem grammar]. The parsing in
 general and the building up of the AST is done in a similar fashion to the
-math mode but preserves the whitespaces when needed.
+math mode, but preserves the whitespaces when needed.
 
 As the design of the parser does not allow the usage of the dollar sign in
-the math mode the tags `\begin{math}` and `\end{math}` were introduced to 
+the math mode, the tags `\begin{math}` and `\end{math}` were introduced to 
 provide the ability to switch to math mode within a chemical formula. The
 undocumented `\color` tag of mhchem is only supported for named colors. 
 The full documentation of the mhchem package can be found on the 
 [mhchem website].
 
 ### Examples:
-This example would be typeset wrongly without the extended parser as some
-charges would be typeset as bonds and some addition signs would end up as 
+This example would be typeset wrongly without the extended parser, as some
+charges would be typeset as bonds, and some addition signs would end up as 
 charges. Running:
 ```sh
 bin/texvcjs  --usemhchem '\ce{2Na + 2H2O -> 2Na+ + 2OH- + H-H}'

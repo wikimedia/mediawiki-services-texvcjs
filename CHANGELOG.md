@@ -1,6 +1,11 @@
+# texvcjs 0.6.0 (2025-11-06)
+
+* Update low-level grammar to Peggy version 5
+* test with node version 22
+
 # texvcjs 0.5.0 (2022-08-23)
 
-* Remove low level API export as the internal structure has been refactored significantly.
+* Remove low-level API export as the internal structure has been refactored significantly.
 
 # texvcjs 0.4.0 (2022-07-14)
 
