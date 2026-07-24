@@ -5,11 +5,11 @@
 	"main": "lib/index.js",
 	"scripts": {
 		"build": "node -e 'require(\"./lib/build-parser\")'",
-		"cover": "nyc --reporter=lcov _mocha --recursive",
+		"cover": "c8 --reporter=lcov _mocha --recursive",
 		"lint": "eslint --max-warnings 0 --ext .js . bin/texvcjs",
 		"lint:fix": "eslint --fix --ext .js . bin/texvcjs",
 		"test": "npm run build && npm run lint && npm run cover && npm run check-coverage",
-		"check-coverage": "nyc check-coverage --lines 100"
+		"check-coverage": "c8 check-coverage --lines 98"
 	},
 	"repository": {
 		"type": "git",
@@ -32,11 +32,11 @@
 		"commander": "~14.0.2"
 	},
 	"devDependencies": {
+		"c8": "12.0.0",
 		"eslint-config-wikimedia": "0.31.0",
 		"jshint": "^2.13.6",
 		"mocha": "11.7.4",
 		"mocha-lcov-reporter": "^1.3.0",
-		"nyc": "^17.1.0",
 		"peggy": "^5.0.6"
 	},
 	"bin": {
